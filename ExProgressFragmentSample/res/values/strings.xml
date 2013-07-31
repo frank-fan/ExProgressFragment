@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MainActivity</string>
+    <string name="sample_content">Husky /ˈhʌski/ is a general name for a type of dog used to pull sleds in northern regions, differentiated from other sled-dog types by their fast pulling style.[1] They are "an ever-changing cross-breed of the...fastest dogs".[2] The Alaskan Malamute, by contrast, is "the largest and most powerful" sled dog,[3] and was used for heavier loads. Huskies are used in sled dog racing. In recent years companies have been marketing tourist treks with dog sledges for adventure travelers in snow regions as well.[4] Huskies are also today kept as pets, and groups work to find new pet homes for retired racing and adventure trekking dogs.[5]</string>
+    <string name="sample_empty">A oh, the content is empty!</string>
+</resources>
