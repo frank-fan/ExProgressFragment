@@ -12,26 +12,32 @@ This library is compatible from API 4 (Android 1.6).
 
 * Implement ExProgressFragment
 
+```java
 	public class ExampleExProgressFragment extends ExProgressFragment {
 	}
+```
 
 * if you are using ActionBarSherlock, change ExProgressFragment by extend SherlockFragment
 
-
+```java
 	public class ExProgressFragment extends SherlockFragment {
 	
 	}
+```
 
 * if you wanna use AndroidAnnotation, you have nothing to worry about, just add @EFragment annotation.
 
+```java
 	@EFragment
 	public class ExampleExProgressFragment extends ExProgressFragment {
 	}
+```
 
  btw, the sample project demo how to use ExProgressFragment with AndroidAnnotation.
 
 as you can see in the sample project, @ViewById, @Click function, provided by AndroidAnnotation, can be used as usual.
 
+```java
 	@EFragment
 	public class ExampleExProgressFragment extends ExProgressFragment {
 	 	@ViewById
@@ -50,8 +56,10 @@ as you can see in the sample project, @ViewById, @Click function, provided by An
 	        showError();
 	    }
 	}
+```
 * You can easily custom empty, content, progress and error view by override the "onCreate*View" methods
 
+```java
 	@EFragment
 	public class ExampleExProgressFragment extends ExProgressFragment {
 	
@@ -75,6 +83,7 @@ as you can see in the sample project, @ViewById, @Click function, provided by An
 	        return inflater.inflate(R.layout.sample_custom_progress, null);
 	    }
 	}
+```
 
 all views will be added to content view, so you can use @ViewById find views.
 
