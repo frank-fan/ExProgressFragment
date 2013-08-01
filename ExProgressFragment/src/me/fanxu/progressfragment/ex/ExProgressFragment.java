@@ -48,11 +48,19 @@ public class ExProgressFragment extends Fragment {
 
         mContentView = main;
 
-        mAnimIn = AnimationUtils.loadAnimation(getActivity(), android.R.anim.fade_in);
-        mAnimOut = AnimationUtils.loadAnimation(getActivity(), android.R.anim.fade_out);
+        mAnimIn = onCreateAnimationIn();
+        mAnimOut = onCreateAnimationOut();
 
         initStates();
         return main;
+    }
+
+    public Animation onCreateAnimationIn() {
+        return AnimationUtils.loadAnimation(getActivity(), android.R.anim.fade_in);
+    }
+
+    public Animation onCreateAnimationOut() {
+        return AnimationUtils.loadAnimation(getActivity(), android.R.anim.fade_out);
     }
 
     private void replaceViewById(ViewGroup container, int viewId, View newView) {
@@ -64,8 +72,6 @@ public class ExProgressFragment extends Fragment {
         int index = container.indexOfChild(oldView);
         container.removeView(oldView);
         container.addView(newView, index);
-
-        //³õÊ¼ÎªÒþ²Ø
         newView.setVisibility(View.GONE);
     }
 
@@ -93,24 +99,36 @@ public class ExProgressFragment extends Fragment {
     private ShowState mLastState = new NonState();
 
     public void showContent(boolean animate) {
+        if ( mLastState == mContentState) {
+            return;
+        }
         mContentState.show(animate);
         mLastState.dismiss(animate);
         mLastState = mContentState;
     }
 
     public void showEmpty(boolean animate) {
+        if ( mLastState == mEmptyState) {
+            return;
+        }
         mEmptyState.show(animate);
         mLastState.dismiss(animate);
         mLastState = mEmptyState;
     }
 
     public void showError(boolean animate) {
+        if ( mLastState == mErrorState) {
+            return;
+        }
         mErrorState.show(animate);
         mLastState.dismiss(animate);
         mLastState = mErrorState;
     }
 
     public void showProgress(boolean animate) {
+        if ( mLastState == mProgressState) {
+            return;
+        }
         mProgressState.show(animate);
         mLastState.dismiss(animate);
         mLastState = mProgressState;
