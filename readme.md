@@ -33,7 +33,11 @@ This library is compatible from API 4 (Android 1.6).
 	}
 ```
 
- btw, the sample project demo how to use ExProgressFragment with AndroidAnnotation.
+>Notice:
+>ExProgressFragment is not support config layout with @EFragment(R.layout.xx),
+>If you wanna set content layout, you should override `onCreateContentView` method.
+
+btw, the sample project demo how to use ExProgressFragment with AndroidAnnotation.
 
 as you can see in the sample project, @ViewById, @Click function, provided by AndroidAnnotation, can be used as usual.
 
